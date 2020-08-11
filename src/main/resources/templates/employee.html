@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Elegir tipo de documento</title>
+</head>
+<body>
+
+<h1>Reporte de empleados</h1>
+
+<h3>Selecciona tipo de archivo a generar:</h3>
+<form action="#" th:action="@{/getReports}" method="post">
+
+<select name="option">
+    <option selected label="Selecciona un tipo de archivo">Escoge tipo de archivo</option>
+    <option th:each="p: ${listOption}" th:value="${p}" th:text="${p}"></option>
+
+</select>
+    <input type="submit" value="Generar">
+</form>
+
+</body>
+</html>
